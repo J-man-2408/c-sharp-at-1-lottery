@@ -1,0 +1,15 @@
+D:\school\tafe\3-thursday-c#\assessments\c-sharp-at-1-lottery\at1-lottery-application\bin\Debug\net8.0\at1-lottery-application.exe
+D:\school\tafe\3-thursday-c#\assessments\c-sharp-at-1-lottery\at1-lottery-application\bin\Debug\net8.0\at1-lottery-application.deps.json
+D:\school\tafe\3-thursday-c#\assessments\c-sharp-at-1-lottery\at1-lottery-application\bin\Debug\net8.0\at1-lottery-application.runtimeconfig.json
+D:\school\tafe\3-thursday-c#\assessments\c-sharp-at-1-lottery\at1-lottery-application\bin\Debug\net8.0\at1-lottery-application.dll
+D:\school\tafe\3-thursday-c#\assessments\c-sharp-at-1-lottery\at1-lottery-application\bin\Debug\net8.0\at1-lottery-application.pdb
+D:\school\tafe\3-thursday-c#\assessments\c-sharp-at-1-lottery\at1-lottery-application\obj\Debug\net8.0\at1-lottery-application.GeneratedMSBuildEditorConfig.editorconfig
+D:\school\tafe\3-thursday-c#\assessments\c-sharp-at-1-lottery\at1-lottery-application\obj\Debug\net8.0\at1-lottery-application.AssemblyInfoInputs.cache
+D:\school\tafe\3-thursday-c#\assessments\c-sharp-at-1-lottery\at1-lottery-application\obj\Debug\net8.0\at1-lottery-application.AssemblyInfo.cs
+D:\school\tafe\3-thursday-c#\assessments\c-sharp-at-1-lottery\at1-lottery-application\obj\Debug\net8.0\at1-lottery-application.csproj.CoreCompileInputs.cache
+D:\school\tafe\3-thursday-c#\assessments\c-sharp-at-1-lottery\at1-lottery-application\obj\Debug\net8.0\at1-lottery-application.sourcelink.json
+D:\school\tafe\3-thursday-c#\assessments\c-sharp-at-1-lottery\at1-lottery-application\obj\Debug\net8.0\at1-lottery-application.dll
+D:\school\tafe\3-thursday-c#\assessments\c-sharp-at-1-lottery\at1-lottery-application\obj\Debug\net8.0\refint\at1-lottery-application.dll
+D:\school\tafe\3-thursday-c#\assessments\c-sharp-at-1-lottery\at1-lottery-application\obj\Debug\net8.0\at1-lottery-application.pdb
+D:\school\tafe\3-thursday-c#\assessments\c-sharp-at-1-lottery\at1-lottery-application\obj\Debug\net8.0\at1-lottery-application.genruntimeconfig.cache
+D:\school\tafe\3-thursday-c#\assessments\c-sharp-at-1-lottery\at1-lottery-application\obj\Debug\net8.0\ref\at1-lottery-application.dll

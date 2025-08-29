@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "at1-lottery-application/1.0.0": {
+        "runtime": {
+          "at1-lottery-application.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "at1-lottery-application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

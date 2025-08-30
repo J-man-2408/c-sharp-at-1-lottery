@@ -34,8 +34,7 @@ for (int i = 0; i < totalNumbers; i++)
         userInput = Console.ReadLine();
         isValid = int.TryParse(userInput, out chosenNumber) && chosenNumber >= minValue && chosenNumber <= maxValue;
         if (isValid == false)
-            Console.WriteLine("Invalid number chosen. Please try again.");
-
+            Console.WriteLine("Invalid number chosen. Please select a number between " + minValue + " and " + maxValue + ": ");
         // Linear search to check for no duplicates
         if (isValid && LinearSearch(userNumbers, chosenNumber) != -1)
         {
@@ -45,18 +44,45 @@ for (int i = 0; i < totalNumbers; i++)
 
     }
     while (!isValid);
-
+// Store valid numbers
     userNumbers[i] = chosenNumber;
 }
 
-
-
-// Store valid numbers
-
 // Generate the random lottery numbers
+Random rnd = new Random();
+int randomNumbers = rnd.Next(minValue, maxValue);
 
-// Sort the lottery numbers
+for (int i = 0; i < totalNumbers; i++)
+{
+    int number;
+    bool isUnique;
+    do
+    {
+        number = rnd.Next(minValue, maxValue + 1);
+        isUnique = LinearSearch(lotteryNumbers, number) == -1;
+    }
+    while (isUnique == false);
+    lotteryNumbers[i] = number;
+}
 
+
+// Sort the lottery and users numbers numbers
+Array.Sort(lotteryNumbers);
+Array.Sort(userNumbers);
+
+// Testing the lottery adn user numbers sorting
+// TAKE OUT BEFORE SUBMITTING!
+Console.WriteLine("Your lottery numbers are:");
+for (int i = 0; i < totalNumbers; i++)
+{
+    Console.WriteLine(lotteryNumbers[i] + " ");
+}
+
+Console.WriteLine("Your chosen numbers are:");
+for (int i = 0; i < totalNumbers; i++)
+{
+    Console.WriteLine(userNumbers[i] + " ");
+}
 // Binary search to loop through the users numbers to see if it's in the lottery numbers
 
 // Count total matches

@@ -19,7 +19,7 @@ int[] userNumbers = new int[totalNumbers];
 int[] lotteryNumbers = new int[totalNumbers];
 
 // Prompt user
-Console.WriteLine("Please enter " + totalNumbers + " between " + minValue + " and " + maxValue);
+Console.WriteLine("Please enter " + totalNumbers + " numbers between " + minValue + " and " + maxValue);
 
 // Loop and validate if its a number and in range
 for (int i = 0; i < totalNumbers; i++)
@@ -35,13 +35,21 @@ for (int i = 0; i < totalNumbers; i++)
         isValid = int.TryParse(userInput, out chosenNumber) && chosenNumber >= minValue && chosenNumber <= maxValue;
         if (isValid == false)
             Console.WriteLine("Invalid number chosen. Please try again.");
+
+        // Linear search to check for no duplicates
+        if (isValid && LinearSearch(userNumbers, chosenNumber) != -1)
+        {
+            isValid = false;
+            Console.WriteLine("You already chose that number. Please enter a differnt number.");
+        }
+
     }
     while (!isValid);
 
     userNumbers[i] = chosenNumber;
 }
 
-// Linear search to check for no duplicates
+
 
 // Store valid numbers
 
@@ -54,3 +62,20 @@ for (int i = 0; i < totalNumbers; i++)
 // Count total matches
 
 // Display the results 
+
+// Linear Search 
+int LinearSearch(int[] arrayToSearch, int valueToFind)
+{
+    for (int i = 0; i < arrayToSearch.Length; ++i) // loop through array 
+    {
+        if (arrayToSearch[i] == valueToFind) // if value matches
+        {
+            return i; // returns index if found
+        }
+    }
+    return -1; // returns -1 if not found
+}
+
+// Binary Search 
+
+// Bubble Sort

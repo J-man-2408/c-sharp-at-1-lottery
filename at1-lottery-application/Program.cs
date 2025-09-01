@@ -6,6 +6,8 @@
 
 
 // Display Welcome Message and Instructions
+using System.Globalization;
+
 Console.WriteLine("Welcome to JASMINE'S INCREDIBLE LOTTERY!");
 Console.WriteLine("You could win BIG if your chosen numbers match those selected by JASMINE'S INCREDIBLE LOTTERY MACHINE!\n");
 
@@ -65,18 +67,17 @@ for (int i = 0; i < totalNumbers; i++)
     lotteryNumbers[i] = number;
 }
 
-
 // Sort the lottery and users numbers numbers
 Array.Sort(lotteryNumbers);
 Array.Sort(userNumbers);
 
-// Testing the lottery adn user numbers sorting
-// TAKE OUT BEFORE SUBMITTING!
-Console.WriteLine("Your lottery numbers are:");
-for (int i = 0; i < totalNumbers; i++)
-{
-    Console.WriteLine(lotteryNumbers[i] + " ");
-}
+    // Testing the lottery adn user numbers sorting
+    // TAKE OUT BEFORE SUBMITTING!
+    Console.WriteLine("Your lottery numbers are:");
+    for (int i = 0; i < totalNumbers; i++)
+    {
+      Console.WriteLine(lotteryNumbers[i] + " ");
+    }
 
 Console.WriteLine("Your chosen numbers are:");
 for (int i = 0; i < totalNumbers; i++)
@@ -84,6 +85,21 @@ for (int i = 0; i < totalNumbers; i++)
     Console.WriteLine(userNumbers[i] + " ");
 }
 // Binary search to loop through the users numbers to see if it's in the lottery numbers
+int matches = 0;
+
+foreach (int number in userNumbers)
+{
+    if (BinarySearch(lotteryNumbers, number))
+        matches++;
+}
+
+    // How many matches print out
+    // TAKE OUT BEFORE SUBMITTING! 
+    Console.WriteLine("Matches equal: ");
+    for (int i = 0; i < matches; i++)
+    {
+        Console.WriteLine(matches);
+    }
 
 // Count total matches
 
@@ -92,16 +108,35 @@ for (int i = 0; i < totalNumbers; i++)
 // Linear Search 
 int LinearSearch(int[] arrayToSearch, int valueToFind)
 {
-    for (int i = 0; i < arrayToSearch.Length; ++i) // loop through array 
+    for (int i = 0; i < arrayToSearch.Length; i++)
     {
-        if (arrayToSearch[i] == valueToFind) // if value matches
+        if (arrayToSearch[i] == valueToFind)
         {
-            return i; // returns index if found
+            return 1;
         }
     }
-    return -1; // returns -1 if not found
+    return -1;
 }
 
 // Binary Search 
+bool BinarySearch(int[] arrayToSearch, int valueToFind)
+{
+    int left = 0;
+    int right = arrayToSearch.Length - 1;
+
+    while (left <= right)
+    {
+        int mid = (left + right) / 2;
+        if (arrayToSearch[mid] == valueToFind)
+            return true;
+        else if (arrayToSearch[mid] < valueToFind)
+            left = mid + 1;
+        else
+            right = mid - 1;
+    }
+
+    return false;
+}
+
 
 // Bubble Sort

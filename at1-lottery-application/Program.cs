@@ -9,7 +9,7 @@
 Console.WriteLine("Welcome to JASMINE'S INCREDIBLE LOTTERY!");
 Console.WriteLine("You could win BIG if your chosen numbers match those selected by JASMINE'S INCREDIBLE LOTTERY MACHINE!\n");
 
-// Cutomise Variables
+// Customise Variables
 int totalNumbers = 6;
 int minValue = 1;
 int maxValue = 49;
@@ -33,13 +33,13 @@ for (int i = 0; i < totalNumbers; i++)
         Console.WriteLine("Enter number " + (i + 1) + ": ");
         userInput = Console.ReadLine();
         isValid = int.TryParse(userInput, out chosenNumber) && chosenNumber >= minValue && chosenNumber <= maxValue;
-        if (isValid == false)
+        if (!isValid)
             Console.WriteLine("Invalid number chosen. Please select a number between " + minValue + " and " + maxValue + ": ");
         // Linear search to check for no duplicates
         if (isValid && LinearSearch(userNumbers, chosenNumber) != -1)
         {
             isValid = false;
-            Console.WriteLine("You already chose that number. Please enter a differnt number.");
+            Console.WriteLine("You already chose that number. Please enter a different number.");
         }
 
     }

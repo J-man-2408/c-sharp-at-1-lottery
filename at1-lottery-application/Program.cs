@@ -2,12 +2,10 @@
  * Jasmine Sullivan 
  * 20147180
  * Certificate IV - C# - NMTAFE
- * 28/08/2025 - 00/00/0000 */
+ * 28/08/2025 - 01/09/2025 */
 
 
 // Display Welcome Message and Instructions
-using System.Globalization;
-
 Console.WriteLine("Welcome to JASMINE'S INCREDIBLE LOTTERY!");
 Console.WriteLine("You could win BIG if your chosen numbers match those selected by JASMINE'S INCREDIBLE LOTTERY MACHINE!\n");
 
@@ -16,7 +14,7 @@ int totalNumbers = 6;
 int minValue = 1;
 int maxValue = 49;
 
-//Arrays to store
+// Arrays to store
 int[] userNumbers = new int[totalNumbers];
 int[] lotteryNumbers = new int[totalNumbers];
 
@@ -52,7 +50,6 @@ for (int i = 0; i < totalNumbers; i++)
 
 // Generate the random lottery numbers
 Random rnd = new Random();
-int randomNumbers = rnd.Next(minValue, maxValue);
 
 for (int i = 0; i < totalNumbers; i++)
 {
@@ -71,20 +68,7 @@ for (int i = 0; i < totalNumbers; i++)
 Array.Sort(lotteryNumbers);
 Array.Sort(userNumbers);
 
-    // Testing the lottery adn user numbers sorting
-    // TAKE OUT BEFORE SUBMITTING!
-    Console.WriteLine("Your lottery numbers are:");
-    for (int i = 0; i < totalNumbers; i++)
-    {
-      Console.WriteLine(lotteryNumbers[i] + " ");
-    }
-
-Console.WriteLine("Your chosen numbers are:");
-for (int i = 0; i < totalNumbers; i++)
-{
-    Console.WriteLine(userNumbers[i] + " ");
-}
-// Binary search to loop through the users numbers to see if it's in the lottery numbers
+// Binary search to find how many matches were made
 int matches = 0;
 
 foreach (int number in userNumbers)
@@ -93,32 +77,56 @@ foreach (int number in userNumbers)
         matches++;
 }
 
-    // How many matches print out
-    // TAKE OUT BEFORE SUBMITTING! 
-    Console.WriteLine("Matches equal: ");
-    for (int i = 0; i < matches; i++)
-    {
-        Console.WriteLine(matches);
-    }
+// Display the results depending on the matches made
+Console.WriteLine("\nYour lottery numbers were:");
+for (int i = 0; i < totalNumbers; i++)
+{
+    Console.WriteLine(lotteryNumbers[i]);
+}
 
-// Count total matches
+Console.WriteLine("Your chosen numbers were:");
+for (int i = 0; i < totalNumbers; i++)
+{
+    Console.WriteLine(userNumbers[i] + " ");
+}
+Console.WriteLine("You matched " + matches + " number(s)!");
 
-// Display the results 
+switch (matches)
+{
+    case 0:
+        Console.WriteLine("Better luck next time!");
+        break;
+    case 1:
+    case 2:
+        Console.WriteLine("Not bad! Try again!");
+        break;
+    case 3:
+    case 4:
+        Console.WriteLine("So close! You matched a few! Keep trying!");
+    break;
+    case 5:
+        Console.WriteLine("OMG! You were just one away from JASMINE'S INCREDIBLE JACKPOT!");
+            break;
+    case 6:
+        Console.WriteLine("YOU'VE JUST WON JASMINE'S INCREDIBLE LOTTERY!!!");
+        Console.WriteLine("*Terms & Conditions apply: By 'win,' we mean eternal bragging rights. No actual money will be deposited. Please don’t quit your day job.*");
+        break;
+}
 
-// Linear Search 
+// Linear Search: Returns the index of valueToFind if found; otherwise -1
 int LinearSearch(int[] arrayToSearch, int valueToFind)
 {
     for (int i = 0; i < arrayToSearch.Length; i++)
     {
         if (arrayToSearch[i] == valueToFind)
         {
-            return 1;
+            return i;
         }
     }
     return -1;
 }
 
-// Binary Search 
+// Binary Search: Returns true if valueToFind is found in the sorted array; otherwise false
 bool BinarySearch(int[] arrayToSearch, int valueToFind)
 {
     int left = 0;
@@ -137,6 +145,3 @@ bool BinarySearch(int[] arrayToSearch, int valueToFind)
 
     return false;
 }
-
-
-// Bubble Sort
